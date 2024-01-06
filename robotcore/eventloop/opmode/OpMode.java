@@ -1,4 +1,4 @@
-/* Copyright (c) 2014 Qualcomm Technologies Inc
+package com.qualcomm.robotcore.eventloop.robotcore.eventloop.opmode;/* Copyright (c) 2014 Qualcomm Technologies Inc
 
 All rights reserved.
 
@@ -29,11 +29,9 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-package com.sources.com.qualcomm.robotcore.eventloop.opmode;
-
-import com.qualcomm.robotcore.hardware.Gamepad;
-import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.robocol.Telemetry;
+import com.qualcomm.robotcore.eventloop.robotcore.hardware.Gamepad;
+import com.qualcomm.robotcore.eventloop.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.Telemetry;
 
 import java.util.concurrent.TimeUnit;
 

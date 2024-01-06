@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.hardware;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,16 +28,12 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.hardware;
-
-import com.qualcomm.robotcore.hardware.DigitalChannelController;
-
 /**
  * Control a single digital channel
  */
 public class DigitalChannel {
 
-	private com.qualcomm.robotcore.hardware.DigitalChannelController controller = null;
+	private DigitalChannelController controller = null;
 	private int channel = -1;
 
 	/**
@@ -46,7 +42,7 @@ public class DigitalChannel {
 	 * @param controller Digital channel controller this channel is attached to
 	 * @param channel channel on the digital channel controller
 	 */
-	public DigitalChannel(com.qualcomm.robotcore.hardware.DigitalChannelController controller, int channel) {
+	public DigitalChannel(DigitalChannelController controller, int channel) {
 		this.controller = controller;
 		this.channel = channel;
 	}
@@ -56,7 +52,7 @@ public class DigitalChannel {
 	 *
 	 * @return channel mode
 	 */
-	public com.qualcomm.robotcore.hardware.DigitalChannelController.Mode getMode() {
+	public DigitalChannelController.Mode getMode() {
 		return controller.getDigitalChannelMode(channel);
 	}
 

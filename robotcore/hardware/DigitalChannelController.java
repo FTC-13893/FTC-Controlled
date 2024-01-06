@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.hardware;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,9 +28,7 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.hardware;
-
-import com.qualcomm.robotcore.util.SerialNumber;
+import com.qualcomm.robotcore.eventloop.robotcore.util.SerialNumber;
 
 /**
  * Interface for working with Digital Channel Controllers

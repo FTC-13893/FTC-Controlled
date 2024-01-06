@@ -1,6 +1,6 @@
-package com.sources.com.qualcomm.robotcore.robocol;
+package com.qualcomm.robotcore.eventloop.robotcore.robocol;
 
-import com.qualcomm.robotcore.util.RobotLog;
+import com.qualcomm.robotcore.eventloop.robotcore.util.RobotLog;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

@@ -1,4 +1,4 @@
-/* Copyright (c) 2014, 2015 Qualcomm Technologies Inc
+package com.qualcomm.robotcore.eventloop.robotcore.hardware;/* Copyright (c) 2014, 2015 Qualcomm Technologies Inc
 
 All rights reserved.
 
@@ -29,16 +29,20 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-package com.sources.com.qualcomm.robotcore.hardware;
-
-import com.qualcomm.robotcore.hardware.DcMotorController;
-
 /**
  * Control a DC Motor attached to a DC Motor Controller
  *
  * @see com.qualcomm.robotcore.hardware.DcMotorController
  */
 public class DcMotor {
+
+	public Object getPosition() {
+		final Object o = null;
+		return o;
+	}
+
+	public void setPosition(double v) {
+	}
 
 	/**
 	 * Motor direction
@@ -49,10 +53,10 @@ public class DcMotor {
 	};
 
 	protected Direction direction = Direction.FORWARD;
-	protected com.qualcomm.robotcore.hardware.DcMotorController controller = null;
+	protected DcMotorController controller = null;
 	protected int portNumber = -1;
-	protected com.qualcomm.robotcore.hardware.DcMotorController.RunMode mode = com.qualcomm.robotcore.hardware.DcMotorController.RunMode.RUN_WITHOUT_ENCODERS;
-	protected com.qualcomm.robotcore.hardware.DcMotorController.DeviceMode devMode = com.qualcomm.robotcore.hardware.DcMotorController.DeviceMode.WRITE_ONLY;
+	protected DcMotorController.RunMode mode = DcMotorController.RunMode.RUN_WITHOUT_ENCODERS;
+	protected DcMotorController.DeviceMode devMode = DcMotorController.DeviceMode.WRITE_ONLY;
 
 
 	/**
@@ -61,7 +65,7 @@ public class DcMotor {
 	 * @param controller DC motor controller this motor is attached to
 	 * @param portNumber portNumber position on the controller
 	 */
-	public DcMotor(com.qualcomm.robotcore.hardware.DcMotorController controller, int portNumber) {
+	public DcMotor(DcMotorController controller, int portNumber) {
 		this(controller, portNumber, Direction.FORWARD);
 	}
 
@@ -72,7 +76,7 @@ public class DcMotor {
 	 * @param portNumber portNumber port number on the controller
 	 * @param direction direction this motor should spin
 	 */
-	public DcMotor(com.qualcomm.robotcore.hardware.DcMotorController controller, int portNumber, Direction direction) {
+	public DcMotor(DcMotorController controller, int portNumber, Direction direction) {
 		this.controller = controller;
 		this.portNumber = portNumber;
 		this.direction = direction;
@@ -83,7 +87,7 @@ public class DcMotor {
 	 *
 	 * @return controller
 	 */
-	public com.qualcomm.robotcore.hardware.DcMotorController getController() {
+	public DcMotorController getController() {
 		return controller;
 	}
 
@@ -122,7 +126,7 @@ public class DcMotor {
 	 */
 	public void setPower(double power) {
 		if (direction == Direction.REVERSE) power *= -1;
-		if (mode == com.qualcomm.robotcore.hardware.DcMotorController.RunMode.RUN_TO_POSITION)
+		if (mode == DcMotorController.RunMode.RUN_TO_POSITION)
 			power = Math.abs(power);
 		controller.setMotorPower(portNumber, power);
 	}
@@ -188,7 +192,7 @@ public class DcMotor {
 	 *
 	 * @param mode run mode
 	 */
-	public void setChannelMode(com.qualcomm.robotcore.hardware.DcMotorController.RunMode mode) {
+	public void setChannelMode(DcMotorController.RunMode mode) {
 		this.mode = mode;
 		controller.setMotorChannelMode(portNumber, mode);
 	}

@@ -1,4 +1,4 @@
-/* Copyright (c) 2014 Qualcomm Technologies Inc
+package com.qualcomm.robotcore.eventloop.robotcore.hardware;/* Copyright (c) 2014 Qualcomm Technologies Inc
 
 All rights reserved.
 
@@ -29,17 +29,24 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-package com.sources.com.qualcomm.robotcore.hardware;
-
-import com.qualcomm.robotcore.hardware.ServoController;
-import com.qualcomm.robotcore.util.Range;
+import com.qualcomm.robotcore.eventloop.robotcore.util.Range;
 
 /**
  * Control a single servo
  */
 public class Servo {
 
-	/**
+	private Direction power;
+
+	public void setPower(Direction power) {
+        this.power = power;
+    }
+
+    public Direction getPower() {
+        return power;
+    }
+
+    /**
 	 * Motor direction
 	 */
 	public enum Direction { FORWARD, REVERSE };
@@ -47,7 +54,7 @@ public class Servo {
 	public static final double MIN_POSITION = 0.0;
 	public static final double MAX_POSITION = 1.0;
 
-	protected com.qualcomm.robotcore.hardware.ServoController controller = null;
+	protected ServoController controller = null;
 	protected int portNumber = -1;
 
 	protected Direction direction = Direction.FORWARD;
@@ -60,7 +67,7 @@ public class Servo {
 	 * @param controller Servo controller that this servo is attached to
 	 * @param portNumber physical port number on the servo controller
 	 */
-	public Servo(com.qualcomm.robotcore.hardware.ServoController controller, int portNumber) {
+	public Servo(ServoController controller, int portNumber) {
 		this(controller, portNumber, Direction.FORWARD);
 	}
 
@@ -71,7 +78,7 @@ public class Servo {
 	 * @param portNumber physical port number on the servo controller
 	 * @param direction FORWARD for normal operation, REVERSE to reverse operation
 	 */
-	public Servo(com.qualcomm.robotcore.hardware.ServoController controller, int portNumber, Direction direction) {
+	public Servo(ServoController controller, int portNumber, Direction direction) {
 		this.direction = direction;
 		this.controller = controller;
 		this.portNumber = portNumber;

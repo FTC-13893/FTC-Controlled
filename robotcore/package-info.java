@@ -32,10 +32,9 @@
 /**
  * RobotCore library. Contains event loops, socket communication, hardware abstractions, utility methods, and more.
  * <p>
- * For gamepad information see {@link com.qualcomm.robotcore.hardware.Gamepad}.
+ * For gamepad information see {@link com.qualcomm.robotcore.eventloop.robotcore.hardware.Gamepad}.
  * <p>
- * To create a custom event loop, see {@link com.qualcomm.robotcore.eventloop.EventLoop}.
+ * To create a custom event loop, see {@link com.qualcomm.robotcore.eventloop.robotcore.eventloop.EventLoop}.
  * <p>
  * For information about working with hardware controllers (e.g. servo, motor), see {@link com.qualcomm.robotcore.hardware}
  */
-package com.sources.com.qualcomm.robotcore;

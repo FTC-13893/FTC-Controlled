@@ -32,6 +32,5 @@
 /**
  * RobotCore event loop library.
  * <p>
- * If you would like to create your own custom event loop, see {@link com.qualcomm.robotcore.eventloop.EventLoop}.
+ * If you would like to create your own custom event loop, see {@link com.qualcomm.robotcore.eventloop.robotcore.eventloop.EventLoop}.
  */
-package com.sources.com.qualcomm.robotcore.eventloop;

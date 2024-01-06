@@ -31,4 +31,3 @@
 /**
  * RobotCore utility library.
  */
-package com.sources.com.qualcomm.robotcore.util;

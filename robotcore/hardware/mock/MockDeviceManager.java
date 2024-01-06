@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.hardware.mock;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,11 +28,10 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.hardware.mock;
-
 import android.content.Context;
 
 import com.qualcomm.robotcore.eventloop.EventLoopManager;
+import com.qualcomm.robotcore.eventloop.robotcore.util.SerialNumber;
 import com.qualcomm.robotcore.exception.RobotCoreException;
 import com.qualcomm.robotcore.hardware.AccelerationSensor;
 import com.qualcomm.robotcore.hardware.CompassSensor;
@@ -44,7 +43,6 @@ import com.qualcomm.robotcore.hardware.LegacyModule;
 import com.qualcomm.robotcore.hardware.LightSensor;
 import com.qualcomm.robotcore.hardware.ServoController;
 import com.qualcomm.robotcore.hardware.UltrasonicSensor;
-import com.qualcomm.robotcore.util.SerialNumber;
 
 import java.util.HashMap;
 import java.util.Map;

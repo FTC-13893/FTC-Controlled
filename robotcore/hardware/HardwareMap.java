@@ -1,4 +1,4 @@
-/* Copyright (c) 2014 Qualcomm Technologies Inc
+package com.qualcomm.robotcore.eventloop.robotcore.hardware;/* Copyright (c) 2014 Qualcomm Technologies Inc
 
 All rights reserved.
 
@@ -29,22 +29,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-package com.sources.com.qualcomm.robotcore.hardware;
-
 import android.content.Context;
-
-import com.qualcomm.robotcore.hardware.AccelerationSensor;
-import com.qualcomm.robotcore.hardware.CompassSensor;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.GyroSensor;
-import com.qualcomm.robotcore.hardware.IrSeekerSensor;
-import com.qualcomm.robotcore.hardware.LegacyModule;
-import com.qualcomm.robotcore.hardware.LightSensor;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.ServoController;
-import com.qualcomm.robotcore.hardware.UltrasonicSensor;
-import com.qualcomm.robotcore.hardware.VoltageSensor;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -89,21 +74,21 @@ public class HardwareMap {
 		}
 	}
 
-	public DeviceMapping<com.qualcomm.robotcore.hardware.DcMotorController> dcMotorController = new DeviceMapping<DcMotorController>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.DcMotor> dcMotor = new DeviceMapping<DcMotor>();
+	public DeviceMapping<DcMotorController> dcMotorController = new DeviceMapping<DcMotorController>();
+	public DeviceMapping<DcMotor> dcMotor = new DeviceMapping<DcMotor>();
 
-	public DeviceMapping<com.qualcomm.robotcore.hardware.ServoController> servoController = new DeviceMapping<ServoController>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.Servo> servo = new DeviceMapping<Servo>();
+	public DeviceMapping<ServoController> servoController = new DeviceMapping<ServoController>();
+	public DeviceMapping<Servo> servo = new DeviceMapping<Servo>();
 
-	public DeviceMapping<com.qualcomm.robotcore.hardware.LegacyModule> legacyModule = new DeviceMapping<LegacyModule>();
+	public DeviceMapping<LegacyModule> legacyModule = new DeviceMapping<LegacyModule>();
 
-	public DeviceMapping<com.qualcomm.robotcore.hardware.AccelerationSensor> accelerationSensor = new DeviceMapping<AccelerationSensor>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.CompassSensor> compassSensor = new DeviceMapping<CompassSensor>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.GyroSensor> gyroSensor = new DeviceMapping<GyroSensor>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.IrSeekerSensor> irSeekerSensor = new DeviceMapping<IrSeekerSensor>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.LightSensor> lightSensor = new DeviceMapping<LightSensor>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.UltrasonicSensor> ultrasonicSensor = new DeviceMapping<UltrasonicSensor>();
-	public DeviceMapping<com.qualcomm.robotcore.hardware.VoltageSensor> voltageSensor = new DeviceMapping<VoltageSensor>();
+	public DeviceMapping<AccelerationSensor> accelerationSensor = new DeviceMapping<AccelerationSensor>();
+	public DeviceMapping<CompassSensor> compassSensor = new DeviceMapping<CompassSensor>();
+	public DeviceMapping<GyroSensor> gyroSensor = new DeviceMapping<GyroSensor>();
+	public DeviceMapping<IrSeekerSensor> irSeekerSensor = new DeviceMapping<IrSeekerSensor>();
+	public DeviceMapping<LightSensor> lightSensor = new DeviceMapping<LightSensor>();
+	public DeviceMapping<UltrasonicSensor> ultrasonicSensor = new DeviceMapping<UltrasonicSensor>();
+	public DeviceMapping<VoltageSensor> voltageSensor = new DeviceMapping<VoltageSensor>();
 
 	public Context appContext;
 

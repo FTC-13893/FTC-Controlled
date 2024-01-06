@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.hardware.mock;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,11 +28,9 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.hardware.mock;
-
+import com.qualcomm.robotcore.eventloop.robotcore.util.RobotLog;
+import com.qualcomm.robotcore.eventloop.robotcore.util.SerialNumber;
 import com.qualcomm.robotcore.hardware.DeviceManager.DeviceType;
-import com.qualcomm.robotcore.util.RobotLog;
-import com.qualcomm.robotcore.util.SerialNumber;
 
 /**
  * Base class for Mock USB Devices

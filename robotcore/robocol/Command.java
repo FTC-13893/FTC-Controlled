@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.robocol;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,11 +28,9 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.robocol;
-
+import com.qualcomm.robotcore.eventloop.robotcore.util.RobotLog;
+import com.qualcomm.robotcore.eventloop.robotcore.util.TypeConversion;
 import com.qualcomm.robotcore.exception.RobotCoreException;
-import com.qualcomm.robotcore.util.RobotLog;
-import com.qualcomm.robotcore.util.TypeConversion;
 
 import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;

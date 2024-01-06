@@ -1,4 +1,4 @@
-/* Copyright (c) 2014 Qualcomm Technologies Inc
+package com.qualcomm.robotcore.eventloop.robotcore.wifi;/* Copyright (c) 2014 Qualcomm Technologies Inc
 
 All rights reserved.
 
@@ -29,8 +29,6 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-package com.sources.com.qualcomm.robotcore.wifi;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -47,7 +45,7 @@ import android.net.wifi.p2p.WifiP2pManager.Channel;
 import android.net.wifi.p2p.WifiP2pManager.PeerListListener;
 import android.os.Looper;
 
-import com.qualcomm.robotcore.util.RobotLog;
+import com.qualcomm.robotcore.eventloop.robotcore.util.RobotLog;
 
 import java.net.InetAddress;
 import java.util.ArrayList;

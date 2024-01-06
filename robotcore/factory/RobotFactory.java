@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.factory;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,12 +28,10 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.factory;
-
 import com.qualcomm.robotcore.eventloop.EventLoopManager;
+import com.qualcomm.robotcore.eventloop.robotcore.robot.Robot;
 import com.qualcomm.robotcore.exception.RobotCoreException;
 import com.qualcomm.robotcore.robocol.RobocolDatagramSocket;
-import com.qualcomm.robotcore.robot.Robot;
 
 public class RobotFactory {
 

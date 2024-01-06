@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.hardware;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,21 +28,8 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.hardware;
-
+import com.qualcomm.robotcore.eventloop.robotcore.util.SerialNumber;
 import com.qualcomm.robotcore.exception.RobotCoreException;
-import com.qualcomm.robotcore.hardware.AccelerationSensor;
-import com.qualcomm.robotcore.hardware.CompassSensor;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.GyroSensor;
-import com.qualcomm.robotcore.hardware.IrSeekerSensor;
-import com.qualcomm.robotcore.hardware.LegacyModule;
-import com.qualcomm.robotcore.hardware.LightSensor;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.ServoController;
-import com.qualcomm.robotcore.hardware.UltrasonicSensor;
-import com.qualcomm.robotcore.util.SerialNumber;
 
 import java.util.Map;
 
@@ -83,7 +70,7 @@ public abstract class DeviceManager {
 	 * @throws RobotCoreException if unable to create instance
 	 * @throws InterruptedException if the thread is interrupted
 	 */
-	public abstract com.qualcomm.robotcore.hardware.DcMotorController createUsbDcMotorController(SerialNumber serialNumber)
+	public abstract DcMotorController createUsbDcMotorController(SerialNumber serialNumber)
 			throws RobotCoreException, InterruptedException;
 
 	/**
@@ -93,8 +80,8 @@ public abstract class DeviceManager {
 	 * @param portNumber physical port number on the controller
 	 * @return an instance of a DcMotor
 	 */
-	public com.qualcomm.robotcore.hardware.DcMotor createDcMotor(com.qualcomm.robotcore.hardware.DcMotorController controller, int portNumber) {
-		return new com.qualcomm.robotcore.hardware.DcMotor(controller, portNumber, DcMotor.Direction.FORWARD);
+	public DcMotor createDcMotor(DcMotorController controller, int portNumber) {
+		return new DcMotor(controller, portNumber, DcMotor.Direction.FORWARD);
 	}
 
 	/**
@@ -105,7 +92,7 @@ public abstract class DeviceManager {
 	 * @throws RobotCoreException if unable to create instance
 	 * @throws InterruptedException if the thread is interrupted
 	 */
-	public abstract com.qualcomm.robotcore.hardware.ServoController createUsbServoController(SerialNumber serialNumber)
+	public abstract ServoController createUsbServoController(SerialNumber serialNumber)
 			throws RobotCoreException, InterruptedException;
 
 	/**
@@ -115,8 +102,8 @@ public abstract class DeviceManager {
 	 * @param portNumber physical port number on the controller
 	 * @return an instance of a Servo
 	 */
-	public com.qualcomm.robotcore.hardware.Servo createServo(com.qualcomm.robotcore.hardware.ServoController controller, int portNumber) {
-		return new com.qualcomm.robotcore.hardware.Servo(controller, portNumber, Servo.Direction.FORWARD);
+	public Servo createServo(ServoController controller, int portNumber) {
+		return new Servo(controller, portNumber, Servo.Direction.FORWARD);
 	}
 
 	/**
@@ -127,7 +114,7 @@ public abstract class DeviceManager {
 	 * @throws RobotCoreException if unable to create instance
 	 * @throws InterruptedException if the thread is interrupted
 	 */
-	public abstract com.qualcomm.robotcore.hardware.LegacyModule createUsbLegacyModule(SerialNumber serialNumber)
+	public abstract LegacyModule createUsbLegacyModule(SerialNumber serialNumber)
 			throws RobotCoreException, InterruptedException;
 
 	/**
@@ -137,7 +124,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return a DcMotorController
 	 */
-	public abstract DcMotorController createNxtDcMotorController(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract DcMotorController createNxtDcMotorController(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of an NXT ServoController
@@ -146,7 +133,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return a ServoController
 	 */
-	public abstract ServoController createNxtServoController(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract ServoController createNxtServoController(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of a NxtCompassSensor
@@ -155,7 +142,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return a CompassSensor
 	 */
-	public abstract CompassSensor createNxtCompassSensor(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract CompassSensor createNxtCompassSensor(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of a AccelerationSensor
@@ -164,7 +151,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return an AccelerationSensor
 	 */
-	public abstract AccelerationSensor createNxtAccelerationSensor(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract AccelerationSensor createNxtAccelerationSensor(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of a LightSensor
@@ -173,7 +160,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return a LightSensor
 	 */
-	public abstract LightSensor createNxtLightSensor(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract LightSensor createNxtLightSensor(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of a IrSeekerSensor
@@ -182,7 +169,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return a IrSeekerSensor
 	 */
-	public abstract IrSeekerSensor createNxtIrSeekerSensor(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract IrSeekerSensor createNxtIrSeekerSensor(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of an UltrasonicSensor
@@ -191,7 +178,7 @@ public abstract class DeviceManager {
 	 * @param physicalPort port number on the Legacy Module this device is connected to
 	 * @return a UltrasonicSensor
 	 */
-	public abstract UltrasonicSensor createNxtUltrasonicSensor(com.qualcomm.robotcore.hardware.LegacyModule legacyModule, int physicalPort);
+	public abstract UltrasonicSensor createNxtUltrasonicSensor(LegacyModule legacyModule, int physicalPort);
 
 	/**
 	 * Create an instance of a GyroSensor

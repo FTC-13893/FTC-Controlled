@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.hardware.mock;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,11 +28,9 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.hardware.mock;
-
+import com.qualcomm.robotcore.eventloop.robotcore.util.DifferentialControlLoopCoefficients;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DeviceManager.DeviceType;
-import com.qualcomm.robotcore.util.DifferentialControlLoopCoefficients;
 
 /**
  * Mock USB DC Motor Controller

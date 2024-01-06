@@ -1,4 +1,4 @@
-/* Copyright (c) 2014 Qualcomm Technologies Inc
+package com.qualcomm.robotcore.eventloop.robotcore.hardware.configuration;/* Copyright (c) 2014 Qualcomm Technologies Inc
 
 All rights reserved.
 
@@ -29,8 +29,6 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
-package com.sources.com.qualcomm.robotcore.hardware.configuration;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -40,7 +38,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.qualcomm.robotcore.util.SerialNumber;
+import com.qualcomm.robotcore.eventloop.robotcore.util.SerialNumber;
 
 import java.util.HashMap;
 import java.util.Map;

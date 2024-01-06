@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.eventloop;/*
  * Copyright (c) 2014, 2015 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,22 +28,18 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.eventloop;
-
-import com.qualcomm.robotcore.eventloop.EventLoop;
-import com.qualcomm.robotcore.eventloop.SyncdDevice;
-import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
+import com.qualcomm.robotcore.eventloop.robotcore.eventloop.opmode.OpModeManager;
+import com.qualcomm.robotcore.eventloop.robotcore.hardware.Gamepad;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.Command;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.Heartbeat;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.PeerDiscovery;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.RobocolDatagram;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.RobocolDatagramSocket;
+import com.qualcomm.robotcore.eventloop.robotcore.robocol.Telemetry;
+import com.qualcomm.robotcore.eventloop.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.eventloop.robotcore.util.Range;
+import com.qualcomm.robotcore.eventloop.robotcore.util.RobotLog;
 import com.qualcomm.robotcore.exception.RobotCoreException;
-import com.qualcomm.robotcore.hardware.Gamepad;
-import com.qualcomm.robotcore.robocol.Command;
-import com.qualcomm.robotcore.robocol.Heartbeat;
-import com.qualcomm.robotcore.robocol.PeerDiscovery;
-import com.qualcomm.robotcore.robocol.RobocolDatagram;
-import com.qualcomm.robotcore.robocol.RobocolDatagramSocket;
-import com.qualcomm.robotcore.robocol.Telemetry;
-import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
-import com.qualcomm.robotcore.util.RobotLog;
 
 import java.net.InetAddress;
 import java.net.SocketException;
@@ -71,7 +67,7 @@ public class EventLoopManager {
 	public static final String RESTART_OPMODE = "RESTART_OPMODE";
 	public static final String OPMODE_RESTART_FINISHED = "OPMODE_RESTART_FINISHED";
 
-	private static final com.qualcomm.robotcore.eventloop.EventLoop EMPTY_EVENT_LOOP = new EmptyEventLoop();
+	private static final EventLoop EMPTY_EVENT_LOOP = new EmptyEventLoop();
 
 	// If no heartbeat is received in this amount of time, forcibly shut down the robot
 	private static final double SECONDS_UNTIL_FORCED_SHUTDOWN = 2.0;
@@ -234,7 +230,7 @@ public class EventLoopManager {
 					}
 
 					// wait for all sync'd devices to be ready
-					for (com.qualcomm.robotcore.eventloop.SyncdDevice device : syncdDevices) {
+					for (SyncdDevice device : syncdDevices) {
 						device.blockUntilReady();
 					}
 
@@ -255,7 +251,7 @@ public class EventLoopManager {
 						throw new RobotCoreException("EventLoop Exception in loop()");
 					} finally {
 						// notify sync'd devices that the event loop is complete
-						for (com.qualcomm.robotcore.eventloop.SyncdDevice device : syncdDevices) {
+						for (SyncdDevice device : syncdDevices) {
 							device.startBlockingWork();
 						}
 					}
@@ -293,7 +289,7 @@ public class EventLoopManager {
 	/**
 	 * Empty event loop, used as a sane default
 	 */
-	private static class EmptyEventLoop implements com.qualcomm.robotcore.eventloop.EventLoop {
+	private static class EmptyEventLoop implements EventLoop {
 
 		@Override
 		public void init(EventLoopManager eventProcessor) {} // take no action
@@ -334,14 +330,14 @@ public class EventLoopManager {
 	private ElapsedTime lastHeartbeatReceived = new ElapsedTime();
 	private String lastActiveOpMode = "";
 
-	private com.qualcomm.robotcore.eventloop.EventLoop eventLoop = EMPTY_EVENT_LOOP;
+	private EventLoop eventLoop = EMPTY_EVENT_LOOP;
 
 	private final Gamepad gamepad[] = { new Gamepad(), new Gamepad() };
 	private Heartbeat heartbeat = new Heartbeat(Heartbeat.Token.EMPTY);
 
 	private EventLoopMonitor callback = null;
 
-	private final Set<com.qualcomm.robotcore.eventloop.SyncdDevice> syncdDevices = new CopyOnWriteArraySet<com.qualcomm.robotcore.eventloop.SyncdDevice>();
+	private final Set<SyncdDevice> syncdDevices = new CopyOnWriteArraySet<SyncdDevice>();
 	private final Command[] commandRecvCache = new Command[MAX_COMMAND_CACHE];
 	private int commandRecvCachePosition = 0;
 
@@ -374,7 +370,7 @@ public class EventLoopManager {
 	 * @param eventLoop set initial event loop
 	 * @throws RobotCoreException if event loop fails to init
 	 */
-	public void start(com.qualcomm.robotcore.eventloop.EventLoop eventLoop) throws RobotCoreException {
+	public void start(EventLoop eventLoop) throws RobotCoreException {
 		this.shutdownRecvLoop = false;
 
 		this.scheduledSendThread = new Thread(new ScheduledSendRunnable());
@@ -399,7 +395,7 @@ public class EventLoopManager {
 	 * 
 	 * @param device sync'd device
 	 */
-	public void registerSyncdDevice(com.qualcomm.robotcore.eventloop.SyncdDevice device) {
+	public void registerSyncdDevice(SyncdDevice device) {
 		this.syncdDevices.add(device);
 	}
 
@@ -408,7 +404,7 @@ public class EventLoopManager {
 	 * 
 	 * @param device sync'd device
 	 */
-	public void unregisterSyncdDevice(com.qualcomm.robotcore.eventloop.SyncdDevice device) {
+	public void unregisterSyncdDevice(SyncdDevice device) {
 		this.syncdDevices.remove(device);
 	}
 
@@ -418,7 +414,7 @@ public class EventLoopManager {
 	 * @param eventLoop new event loop
 	 * @throws RobotCoreException if event loop fails to init
 	 */
-	public void setEventLoop(com.qualcomm.robotcore.eventloop.EventLoop eventLoop) throws RobotCoreException {
+	public void setEventLoop(EventLoop eventLoop) throws RobotCoreException {
 		if (eventLoop == null) {
 			eventLoop = EMPTY_EVENT_LOOP;
 			RobotLog.d("Event loop cannot be null, using empty event loop");

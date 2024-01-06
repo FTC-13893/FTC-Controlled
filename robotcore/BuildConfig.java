@@ -1,4 +1,4 @@
-package com.sources.com.qualcomm.robotcore;
+package com.qualcomm.robotcore.eventloop.robotcore;
 
 public final class BuildConfig {
 

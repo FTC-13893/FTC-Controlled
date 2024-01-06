@@ -1,4 +1,4 @@
-/*
+package com.qualcomm.robotcore.eventloop.robotcore.sensor;/*
  * Copyright (c) 2014 Qualcomm Technologies Inc
  *
  * All rights reserved.
@@ -28,13 +28,11 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sources.com.qualcomm.robotcore.sensor;
-
 import android.util.Log;
 
-import com.qualcomm.robotcore.util.MatrixD;
-import com.qualcomm.robotcore.util.Pose;
-import com.qualcomm.robotcore.util.PoseUtils;
+import com.qualcomm.robotcore.eventloop.robotcore.util.MatrixD;
+import com.qualcomm.robotcore.eventloop.robotcore.util.Pose;
+import com.qualcomm.robotcore.eventloop.robotcore.util.PoseUtils;
 
 import java.util.HashMap;
 import java.util.List;
